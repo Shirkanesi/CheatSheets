@@ -26,6 +26,8 @@ To get some more information about a public-key you can simply use:
 TODO
 `$ gpg --full-gen-key`. This will start an automated assistant helping you to create the proper key. For git you normally want to use RSA&RSA (time of writing the default option `1`). Then you'll need to specify the key-length. Rule of thumb: the longer the better (`4096`). Now you'll be asked, whether your gpg-key should expire at any point in the future. After that you need to specify your name and email (note: this email will be used to identify you later!).
 
+During the creation of the key you might get asked to create more entropy on the system. The most easy way is to fire up an instance of a text editor and just slamming the keyboard.
+
 Note: the keys will be generated during this process, however, in order to upload the public key to GitHub, you need to export the public key as described above.
 
 ## Change your passphrase
@@ -42,6 +44,29 @@ git commit -S -m "Sign-Test"
 git log --show-signature
 ```
 The `git log` should now show you the key-id and author details.
+
+## Deleting a GPG-key
+WARNING! Always double and triple check whether you realy want to delete a private key. There is no going back, if you have no backup of the key!
+
+`$ gpg --delete-secret-keys <id>`
+
+This command will ask you around 2-4 times if you are 10000% sure about what you are doing.
+
+## Encrypting a file using GPG
+`$ gpg -ser <email of recipient> <path/to/file>`
+
+What does this command do?
+
+- `-s` stands for **signed**, so the file will have your signature
+- `-e` stands for **encrypt**, so the file will be encrypted
+- `-r` stands for **recipient**. It'll use the public-key of that particular person (the file can only be decrypted using the corresponding private-key) 
+
+## Decrypting a file using GPG
+`$ gpg -o <name for decrypted file> -d <path/to/encrypted/file>`
+
+What does this command do?
+- `-o` stands for the file, the encrypted file should be decrypted to
+- `-d` stands for **decrypt**, the parameter passed aferwards is the encrypted file
 
 # SSH-Keys (client-authentication)
 ## Get the SHA256-Hash of a ssh-key
