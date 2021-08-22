@@ -103,9 +103,26 @@ Now restart postfix `$ sudo systemctl restart postfix` and everything should wor
 
 Note: you can alway take a look at `/var/log/mail.log` to see, if anything goes wrong.
 
+# Preventing mail-users from logging in via SSH
+(_Hint: make sure not to do a stupid mistake by disabling SSH for every account. If you do, you'll be locked out of the system :c_)
+
+Add a new group named "mailusers": `$ sudo groupadd mailusers`
+
+Open `/etc/ssh/sshd_config` and add `DenyGroups mailusers`
+
+Restart your ssh-deamon: `$ sudo systemctl restart sshd`
+
+Now add each user you don't want to log in via ssh to this group:
+
+`$ sudo usermod -aG mailusers <username>` (Important: do not forget the `a` in `-aG`. The a makes sure you do not remove all other groups!)
+
+## Re-enabling SSH for a user
+`$ sudo deluser <username> mailusers`  (Note: this will neither delete the user nor the group. It only deltes the membership of the user)
+
 # Daily house-ceeping
 ## Add a new user
 ```
 sudo useradd john -m
 sudo passwd john
+sudo usermod -aG mailusers john         // Disables ssh for john
 ```
