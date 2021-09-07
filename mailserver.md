@@ -79,7 +79,7 @@ Add `TrustedAuthservIDs mail.yourdomain.com` (replace with your domain)
 
 Replace `# RejectFailures false` with `RejectFailures true`
 
-Add `IgnoreAuthenticatedClients true` and `RequiredHeaders true` and `SPFSelfValidate true``
+Add `IgnoreAuthenticatedClients true` and `RequiredHeaders true` and `SPFSelfValidate true`
 
 Now replace `Socket local:/var/run/opendmarc/opendmarc.sock` with `Socket local:/var/spool/postfix/opendmarc/opendmarc.sock`
 
