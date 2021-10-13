@@ -117,9 +117,9 @@ Now add each user you don't want to log in via ssh to this group:
 `$ sudo usermod -aG mailusers <username>` (Important: do not forget the `a` in `-aG`. The a makes sure you do not remove all other groups!)
 
 ## Re-enabling SSH for a user
-`$ sudo deluser <username> mailusers`  (Note: this will neither delete the user nor the group. It only deltes the membership of the user)
+`$ sudo deluser <username> mailusers`  (Note: this will neither delete the user nor the group. It only deletes the membership of the user)
 
-# Daily house-ceeping
+# Daily house-keeping
 ## Add a new user
 ```
 sudo useradd john -m
