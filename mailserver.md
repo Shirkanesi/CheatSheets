@@ -39,7 +39,7 @@ mail@shirkanesi.com shirkanesi
 info@shirkanesi.com shirkanesi
 ```
 
-Now restart postfix to apply the settings: `$ sudo systemctl restart postfix`
+Now restart postfix to apply the settings: `$ sudo systemctl restart postfix` (and `$ sudo postmap virtual`)
 
 ## Preparing accounts for email
 Run `$ echo 'export MAIL=~/Maildir' | sudo tee -a /etc/bash.bashrc | sudo tee -a /etc/profile.d/mail.sh` to make sure the MAIL-Variable is set correctly all the time.
