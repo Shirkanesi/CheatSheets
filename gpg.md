@@ -82,6 +82,9 @@ You can use this hash to identify a key on e.g. [GitHub](https://github.com/sett
 This will ask you for the key-file the key is stored in (e.g. id_ed25519). After entering the passphrase the command will spit out the public `ssh-rsa`-String.
 This key can be directly pasted into [GitHub](https://github.com/settings/keys).
 
+## Retrieve unencrypted private SSH key
+`$ ssh-keygen -p`
+
 ## Creating a new SSH-key
 `$ ssh-keygen` this will generate a new key and ask you where to store. Also you'll be asked, whether you want to set a passphrase. The public-key will be stored along with the private key; filename will end with `.pub` (alternatively, it can later be recovered with the command mentioned above).
 
