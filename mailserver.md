@@ -1,3 +1,8 @@
+DISCLAIMER:
+This documentation is **NOT** finished (yet)! Running a mailserver the way described below will potentially allow attacers to send mails in your name. 
+Run it at your own risk!
+
+
 # DNS-Setup
 You need at least the following two DNS-records to send mails to the outside world:
 - MX-record for `yourdomain.com` with the value `mail.yourdomain.com` (set priority to `2`)
