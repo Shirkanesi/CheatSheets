@@ -1,3 +1,3 @@
 # CheatSheets
 ## Disclaimer
-These cheat-sheets are not longer up-to-date. There are some severe with things described on them.
+These cheat-sheets are not longer up-to-date. There are some severe issues with things described on them.
