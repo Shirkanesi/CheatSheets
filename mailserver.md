@@ -1,4 +1,4 @@
-DISCLAIMER:
+# Warning: This tutorial is heavily deprecated. DO NOT DO WHAT YOU SEE ON THIS PAGE. There will be a new tutorial based on [docker-mailserver](https://github.com/docker-mailserver/docker-mailserver). However, this is not finished yet :c
 This documentation is **NOT** finished (yet)! Running a mailserver the way described below will potentially allow attacers to send mails in your name. 
 Run it at your own risk!
 
